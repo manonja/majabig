@@ -1,5 +1,5 @@
 ---
-title: "MajaTech"
+title: "majabig"
 listing:
   contents: posts
   sort: "date desc"
