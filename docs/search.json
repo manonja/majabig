@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "A blog about deep learning, AI, tech and data ethics."
+  },
+  {
+    "objectID": "posts/build-first-model/index.html",
+    "href": "posts/build-first-model/index.html",
+    "title": "Tutorial for building your first model with fastai",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Let’s start big! . Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MajaTech",
+    "section": "",
+    "text": "Tutorial for building your first model with fastai\n\n\n\n\n\n\ntutorial\n\n\ncode\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\nJul 10, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\nNo matching items"
+  }
+]
