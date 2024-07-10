@@ -1,0 +1,9 @@
+---
+title: "Tutorial for building your first model with fastai"
+author: "Manon Jacquin"
+date: "2024-07-10"
+categories: [tutorial, code, deep learning]
+image: "image.jpg"
+---
+
+This is a post with executable code.
