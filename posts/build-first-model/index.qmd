@@ -1,9 +1,35 @@
 ---
-title: "Tutorial for building your first model with fastai"
+title: "Build your first Deep Learning app"
 author: "Manon Jacquin"
 date: "2024-07-10"
-categories: [tutorial, code, deep learning]
+categories: [tutorial, beginner, deep learning]
 image: "image.jpg"
 ---
 
-This is a post with executable code.
+I made my first ML-powered app in day two of the "Deep Learning Course for Coders" from Jeremy Howard of fastai, my new hero haha. 
+
+To give you some context, I am fullstack developer with no prior experience in data science and deep learning. I am just interested in learning how deep learning can solve tangible problems, and how teams and people can make ethical decisions based on data. 
+
+Today I am giving back to the community, so we are going to make an image classification model that classifies bears, using fastai, HuggingFace Spaces and Gradio. It's so inspiring for me to see that in a few lines of code I was able to have something sharable! (You can see it [here!](https://huggingface.co/spaces/majabig/hello-bears))
+
+# What are Deep Learning and Machine Learning? 
+
+# Environment setup 
+
+# Building a model
+
+# Training the model
+
+## Improving the model 
+
+## Downloading the model
+
+# Deploying to HuggingFace Spaces 
+
+## Gradio template
+
+# Celebrate
+
+
+
+
