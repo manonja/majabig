@@ -1,12 +1,22 @@
 ---
-title: "Welcome To My Blog"
+title: "Welcome and Why A Blog"
 author: "Manon Jacquin"
 date: "2024-07-07"
 categories: [news]
 ---
 
-Let's start big! . Welcome!
+Welcome! 
 
-![](thumbnail.jpg)
+In today's world I hear a lot that blogs are dead. 
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+Maybe.
+
+But I love blogs! So I decided to start one anyways to document my learning journey with deep learning and AI. 
+
+I am learning the fundamentals, and on day two of the fastai course from Jeremy Howard I was able to train my first model to classify bears. 
+
+HOW COOL IS THAT??? 
+
+Stay curious, 
+Manon 
+
