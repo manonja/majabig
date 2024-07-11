@@ -1,13 +1,11 @@
 ---
-title: "Welcome and Why A Blog"
+title: "Welcome and Why A Blog?"
 author: "Manon Jacquin"
 date: "2024-07-07"
 categories: [news]
 ---
 
-Welcome! 
-
-In today's world I hear a lot that blogs are dead. 
+I hear a lot that blogs are dead. 
 
 Maybe.
 

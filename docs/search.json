@@ -9,22 +9,43 @@
   {
     "objectID": "posts/build-first-model/index.html",
     "href": "posts/build-first-model/index.html",
-    "title": "Tutorial for building your first model with fastai",
+    "title": "Build your first Deep Learning app",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "I made my first ML-powered app in day two of the “Deep Learning Course for Coders” from Jeremy Howard of fastai, my new hero haha.\nTo give you some context, I am fullstack developer with no prior experience in data science and deep learning. I am just interested in learning how deep learning can solve tangible problems, and how teams and people can make ethical decisions based on data.\nToday I am giving back to the community, so we are going to make an image classification model that classifies bears, using fastai, HuggingFace Spaces and Gradio. It’s so inspiring for me to see that in a few lines of code I was able to have something sharable! (You can see it here!)"
   },
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "title": "Welcome and Why A Blog?",
     "section": "",
-    "text": "Let’s start big! . Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "I hear a lot that blogs are dead.\nMaybe.\nBut I love blogs! So I decided to start one anyways to document my learning journey with deep learning and AI.\nI am learning the fundamentals, and on day two of the fastai course from Jeremy Howard I was able to train my first model to classify bears.\nHOW COOL IS THAT???\nStay curious, Manon"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "MajaTech",
+    "title": "majabig",
     "section": "",
-    "text": "Tutorial for building your first model with fastai\n\n\n\n\n\n\ntutorial\n\n\ncode\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\nJul 10, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\nNo matching items"
+    "text": "Build your first Deep Learning app\n\n\n\n\n\n\ntutorial\n\n\nbeginner\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\nJul 10, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome and Why A Blog?\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/build-first-model/index.html#improving-the-model",
+    "href": "posts/build-first-model/index.html#improving-the-model",
+    "title": "Build your first Deep Learning app",
+    "section": "Improving the model",
+    "text": "Improving the model"
+  },
+  {
+    "objectID": "posts/build-first-model/index.html#downloading-the-model",
+    "href": "posts/build-first-model/index.html#downloading-the-model",
+    "title": "Build your first Deep Learning app",
+    "section": "Downloading the model",
+    "text": "Downloading the model"
+  },
+  {
+    "objectID": "posts/build-first-model/index.html#gradio-template",
+    "href": "posts/build-first-model/index.html#gradio-template",
+    "title": "Build your first Deep Learning app",
+    "section": "Gradio template",
+    "text": "Gradio template"
   }
 ]
