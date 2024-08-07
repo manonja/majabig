@@ -2,7 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/how-do-i-know-i-have-enough-data/index.html",
+      "/posts/what-is-a-neural-net/index.html",
       "/posts/build-first-model/index.html",
+      "/posts/fit-function-into-data/index.html",
       "/posts/welcome/index.html"
     ]
   }

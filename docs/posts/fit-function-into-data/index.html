@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Manon Jacquin">
+<meta name="dcterms.date" content="2024-07-07">
 
-<title>About – majabig</title>
+<title>Fitting a Function to Data in Neural Networks – majabig</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,21 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,17 +70,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">majabig</span>
     </a>
   </div>
@@ -88,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -109,42 +112,91 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Fitting a Function to Data in Neural Networks</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">news</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Manon Jacquin </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 7, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="profile.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
-<p>A blog about deep learning, AI, tech and data ethics.</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://twitter.com/muditaja" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">Twitter</span>
-  </a>
-  <a href="https://linkedin.com/manonjacquin" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/manonja" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+
+
+<p>In the context of neural networks, “fitting a function to data” refers to the process of training the model to learn the underlying patterns, relationships, or mappings between input data and the desired output. Let’s delve into what this means, why it’s essential, and how it is achieved in practice.</p>
+<section id="understanding-the-concept-fitting-a-function-to-data" class="level1">
+<h1>Understanding the Concept: Fitting a Function to Data</h1>
+<p>At its core, a neural network is a complex mathematical function that transforms input data into output predictions. The goal of training (or fitting) is to find the function parameters (weights and biases) that minimize the difference between the network’s predictions and the actual target values.</p>
+<section id="what-is-a-function" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-function">What is a Function?</h2>
+<p>A function in mathematics is a relation between a set of inputs and a set of possible outputs. In the context of machine learning:</p>
+<p>Input (X): The data we provide to the model (e.g., images, text, numerical features). Output (Y): The prediction or classification that the model generates (e.g., labels, regression values). The neural network acts as a parameterized function 𝑓 ( 𝑋 , 𝜃 ) f(X,θ) where:</p>
+<p>𝑋 X is the input data. 𝜃 θ are the parameters (weights and biases). 𝑓 f is the model that maps inputs to outputs.</p>
+</section>
+<section id="why-do-we-fit-a-function-into-data" class="level2">
+<h2 class="anchored" data-anchor-id="why-do-we-fit-a-function-into-data">Why Do We Fit a Function into Data?</h2>
+<ol type="1">
+<li><p>Learning Patterns and Relationships Discovering Hidden Structures: Data often contains complex patterns or relationships that are not easily discernible. By fitting a function, a neural network can learn these structures and make sense of the data. Feature Extraction: Neural networks can automatically learn and extract relevant features from raw data, reducing the need for manual feature engineering.</p></li>
+<li><p>Making Predictions Generalization: Once trained, the network should generalize well to unseen data, making accurate predictions based on the learned patterns. Decision Making: Predictions can drive decision-making processes in various applications like self-driving cars, medical diagnosis, etc.</p></li>
+<li><p>Optimization and Efficiency Loss Minimization: Fitting involves minimizing a loss function that quantifies the difference between predicted and actual values. The goal is to find parameter values that yield the lowest possible loss. Efficient Representation: Neural networks can efficiently represent complex functions with relatively few parameters compared to traditional models, making them suitable for high-dimensional data.</p></li>
+</ol>
+</section>
+<section id="how-does-fitting-work" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-fitting-work">How Does Fitting Work?</h2>
+<p>The process of fitting a function to data in a neural network involves several key steps:</p>
+<ol type="1">
+<li><p>Initialization Parameter Initialization: The weights and biases of the network are initialized, often with small random values or specific strategies like Xavier or He initialization.</p></li>
+<li><p>Forward Pass Data Propagation: The input data is passed through the network layers, and transformations are applied based on the current parameter values to produce an output. Output Prediction: The network generates predictions for the given input data.</p></li>
+<li><p>Loss Calculation Define Loss Function: A loss function (e.g., mean squared error, cross-entropy) measures the difference between predicted and actual target values. Calculate Loss: Compute the loss for the given predictions.</p></li>
+<li><p>Backward Pass (Backpropagation) Gradient Calculation: Using backpropagation, compute the gradients of the loss with respect to each parameter. This involves applying the chain rule to propagate errors backward through the network. Parameter Update: Update the parameters using optimization algorithms like stochastic gradient descent (SGD) or Adam. The parameters are adjusted in the direction that minimizes the loss.</p></li>
+<li><p>Iterative Process Epochs and Batches: The process is repeated over multiple iterations (epochs) and for different subsets of data (batches) to refine the parameter values continually. Convergence: The training process aims to converge to a set of parameters that minimize the loss function, achieving a good fit to the training data.</p></li>
+</ol>
+</section>
+<section id="why-not-use-traditional-models" class="level2">
+<h2 class="anchored" data-anchor-id="why-not-use-traditional-models">Why Not Use Traditional Models?</h2>
+<p>Traditional models, such as linear regression, fit simple functions to data, which might be insufficient for complex tasks where:</p>
+<p>Non-linearity: Data relationships are non-linear and require sophisticated functions to capture. High Dimensionality: Inputs are high-dimensional (e.g., images, audio) and need complex architectures. Complex Patterns: Patterns involve intricate interactions that simple models cannot capture effectively. Neural networks excel in these scenarios due to their ability to approximate complex functions.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Fitting a function to data in neural networks is about learning the optimal parameter values that allow the model to capture underlying patterns and make accurate predictions. This process is central to machine learning, enabling models to generalize from examples and solve real-world problems effectively.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -165,6 +217,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
