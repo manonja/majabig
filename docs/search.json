@@ -39,7 +39,7 @@
     "href": "posts/how-do-i-know-i-have-enough-data/index.html#techniques-to-maximise-our-data-under-constraint-without-enough-data-for-instance",
     "title": "How Do I Know If I Have Enough Data?",
     "section": "Techniques to maximise our data under constraint (without enough data for instance):",
-    "text": "Techniques to maximise our data under constraint (without enough data for instance):\nThe great thing about deep learning is that there are numerous techniques to maximise our data, ensuring we can build effective models even with limited datasets (yay!) - Techniques such as data augmentation, transfer learning, and regularization can significantly enhance model performance.\nStay tuned for a separate article that will delve into these techniques, providing strategies and tips on how to make the most of our available data and improve model performance even with constraints.\n\n\nKey takeaway: By training our model early and often, we can gain valuable insights into our data’s sufficiency and learn how to make informed decisions about data collection and preprocessing. This approach not only helps build better models but also makes our development process more agile and responsive.\nStay curious! Manon"
+    "text": "Techniques to maximise our data under constraint (without enough data for instance):\nThe great thing about deep learning is that there are numerous techniques to maximise our data, ensuring we can build effective models even with limited datasets (yay!) - Techniques such as data augmentation, transfer learning, and regularization can significantly enhance model performance.\nStay tuned for a separate article that will delve into these techniques, providing strategies and tips on how to make the most of our available data and improve model performance even with constraints.\n\nKey takeaway: By training our model early and often, we can gain valuable insights into our data’s sufficiency and learn how to make informed decisions about data collection and preprocessing. This approach not only helps build better models but also makes our development process more agile and responsive.\nStay curious! Manon"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -121,8 +121,8 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "majabig",
+    "title": "‘True intelligence requires empathy, both in humans and machines.’ - Cynthia Rudin",
     "section": "",
-    "text": "How Do I Know If I Have Enough Data?\n\n\n\n\n\n\ntip\n\n\ndeep learning\n\n\ndata processing\n\n\n\n\n\n\n\n\n\nAug 10, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is a neural net?\n\n\n\n\n\n\nbeginner\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\nAug 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nBuild your first Deep Learning app\n\n\n\n\n\n\ntutorial\n\n\nbeginner\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\nJul 10, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nFitting a Function to Data in Neural Networks\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome and Why A Blog?\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\nNo matching items"
+    "text": "How Do I Know If I Have Enough Data?\n\n\n\n\n\n\ntip\n\n\ndeep learning\n\n\ndata processing\n\n\n\n\n\n\n\n\n\nAug 10, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is a neural net?\n\n\n\n\n\n\nbeginner\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\nAug 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nBuild your first Deep Learning app\n\n\n\n\n\n\ntutorial\n\n\nbeginner\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\nJul 10, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nFitting a Function to Data in Neural Networks\n\n\n\n\n\n\nbeginner\n\n\nfundamentals\n\n\n\n\n\n\n\n\n\nJul 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome and Why A Blog?\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\nNo matching items"
   }
 ]
