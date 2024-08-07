@@ -1,0 +1,10 @@
+---
+title: "What is a neural net?"
+author: "Manon Jacquin"
+date: "2024-08-07"
+categories: [beginner, deep learning]
+image: "neural-net.jpg"
+---
+
+
+

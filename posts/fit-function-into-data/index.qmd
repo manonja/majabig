@@ -1,0 +1,82 @@
+---
+title: "Fitting a Function to Data in Neural Networks"
+author: "Manon Jacquin"
+date: "2024-07-07"
+categories: [news]
+---
+
+
+
+In the context of neural networks, "fitting a function to data" refers to the process of training the model to learn the underlying patterns, relationships, or mappings between input data and the desired output. Let’s delve into what this means, why it’s essential, and how it is achieved in practice.
+
+# Understanding the Concept: Fitting a Function to Data
+At its core, a neural network is a complex mathematical function that transforms input data into output predictions. The goal of training (or fitting) is to find the function parameters (weights and biases) that minimize the difference between the network's predictions and the actual target values.
+
+## What is a Function?
+A function in mathematics is a relation between a set of inputs and a set of possible outputs. In the context of machine learning:
+
+Input (X): The data we provide to the model (e.g., images, text, numerical features).
+Output (Y): The prediction or classification that the model generates (e.g., labels, regression values).
+The neural network acts as a parameterized function
+𝑓
+(
+𝑋
+,
+𝜃
+)
+f(X,θ) where:
+
+𝑋
+X is the input data.
+𝜃
+θ are the parameters (weights and biases).
+𝑓
+f is the model that maps inputs to outputs.
+
+## Why Do We Fit a Function into Data?
+
+1. Learning Patterns and Relationships
+Discovering Hidden Structures: Data often contains complex patterns or relationships that are not easily discernible. By fitting a function, a neural network can learn these structures and make sense of the data.
+Feature Extraction: Neural networks can automatically learn and extract relevant features from raw data, reducing the need for manual feature engineering.
+
+2. Making Predictions
+Generalization: Once trained, the network should generalize well to unseen data, making accurate predictions based on the learned patterns.
+Decision Making: Predictions can drive decision-making processes in various applications like self-driving cars, medical diagnosis, etc.
+
+3. Optimization and Efficiency
+Loss Minimization: Fitting involves minimizing a loss function that quantifies the difference between predicted and actual values. The goal is to find parameter values that yield the lowest possible loss.
+Efficient Representation: Neural networks can efficiently represent complex functions with relatively few parameters compared to traditional models, making them suitable for high-dimensional data.
+
+## How Does Fitting Work?
+The process of fitting a function to data in a neural network involves several key steps:
+
+1. Initialization
+Parameter Initialization: The weights and biases of the network are initialized, often with small random values or specific strategies like Xavier or He initialization.
+
+2. Forward Pass
+Data Propagation: The input data is passed through the network layers, and transformations are applied based on the current parameter values to produce an output.
+Output Prediction: The network generates predictions for the given input data.
+
+3. Loss Calculation
+Define Loss Function: A loss function (e.g., mean squared error, cross-entropy) measures the difference between predicted and actual target values.
+Calculate Loss: Compute the loss for the given predictions.
+
+4. Backward Pass (Backpropagation)
+Gradient Calculation: Using backpropagation, compute the gradients of the loss with respect to each parameter. This involves applying the chain rule to propagate errors backward through the network.
+Parameter Update: Update the parameters using optimization algorithms like stochastic gradient descent (SGD) or Adam. The parameters are adjusted in the direction that minimizes the loss.
+
+5. Iterative Process
+Epochs and Batches: The process is repeated over multiple iterations (epochs) and for different subsets of data (batches) to refine the parameter values continually.
+Convergence: The training process aims to converge to a set of parameters that minimize the loss function, achieving a good fit to the training data.
+
+## Why Not Use Traditional Models?
+Traditional models, such as linear regression, fit simple functions to data, which might be insufficient for complex tasks where:
+
+Non-linearity: Data relationships are non-linear and require sophisticated functions to capture.
+High Dimensionality: Inputs are high-dimensional (e.g., images, audio) and need complex architectures.
+Complex Patterns: Patterns involve intricate interactions that simple models cannot capture effectively.
+Neural networks excel in these scenarios due to their ability to approximate complex functions.
+
+## Conclusion
+Fitting a function to data in neural networks is about learning the optimal parameter values that allow the model to capture underlying patterns and make accurate predictions. This process is central to machine learning, enabling models to generalize from examples and solve real-world problems effectively.
+
