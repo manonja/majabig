@@ -4,49 +4,91 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "A blog about deep learning, AI, tech and data ethics."
+    "text": "A blog about tech fundamentals, deep learning, AI, and ethics."
   },
   {
-    "objectID": "posts/how-do-i-know-i-have-enough-data/index.html",
-    "href": "posts/how-do-i-know-i-have-enough-data/index.html",
-    "title": "How Do I Know If I Have Enough Data?",
+    "objectID": "posts/build-http-server-from-scratch/index.html",
+    "href": "posts/build-http-server-from-scratch/index.html",
+    "title": "Building a HTTP Server from Scratch",
     "section": "",
-    "text": "In the world of deep learning, a common question that arises is, “How do I know if I have enough data?” This is a crucial consideration because the quantity and quality of your data can significantly impact the performance of your model. However, knowing whether your dataset is sufficient isn’t always straightforward and requires a combination of practice and experimentation."
+    "text": "Why Build a HTTP server from Scratch?\nFirst, the basics. What Is an HTTP Server?\n\nTCP vs. UDP\n\nKey features of my HTTP Server (Typescript + Nodejs)\nWhat I Learned\n\nLearning 1: Sockets!\nLearning 2: Routing Isn’t That Simple\nLearning 3: Always Try to Break Your Software\n\nWhat’s Next?\nWhy It Matters - Meta Learnings"
   },
   {
-    "objectID": "posts/how-do-i-know-i-have-enough-data/index.html#key-questions-to-ask",
-    "href": "posts/how-do-i-know-i-have-enough-data/index.html#key-questions-to-ask",
-    "title": "How Do I Know If I Have Enough Data?",
-    "section": "Key Questions to Ask:",
-    "text": "Key Questions to Ask:\n\nIs the model overfitting or underfitting? Overfitting might indicate that the model is too complex for the available data. Underfitting suggests the model may be too simple or not trained enough.\nHow does the model perform on validation or test data? Consistent performance across training and validation sets can indicate sufficient data."
-  },
-  {
-    "objectID": "posts/how-do-i-know-i-have-enough-data/index.html#you-cant-know-if-you-have-enough-until-you-train-the-model",
-    "href": "posts/how-do-i-know-i-have-enough-data/index.html#you-cant-know-if-you-have-enough-until-you-train-the-model",
-    "title": "How Do I Know If I Have Enough Data?",
-    "section": "You Can’t Know If You Have Enough Until You Train the Model",
-    "text": "You Can’t Know If You Have Enough Until You Train the Model\nThe truth is, you can’t really know if you have enough data until you actually train the model. The process of training helps reveal whether your dataset is capturing the necessary features and patterns to achieve your desired level of performance. You may find that even a small dataset works well with certain problems, especially with the right techniques, like transfer learning or data augmentation."
-  },
-  {
-    "objectID": "posts/how-do-i-know-i-have-enough-data/index.html#advantages-of-training-early",
-    "href": "posts/how-do-i-know-i-have-enough-data/index.html#advantages-of-training-early",
-    "title": "How Do I Know If I Have Enough Data?",
-    "section": "Advantages of Training Early:",
-    "text": "Advantages of Training Early:\n\nExperimentation: Training early enables experimentation with different models and hyperparameters, helping us to learn what works best for our specific problem.\nUnderstanding Data Needs: Initial training results can inform whether more data is required or if our efforts should focus on optimizing other aspects of the model.\nAvoiding Wasted Effort: We might find that a simple model trained on limited data achieves acceptable results, saving time and resources!\n\nThat being said, the great thing is that there are techniques available to maximise our data, ensuring we can build effective models even with limited datasets (yay!) - Techniques such as data augmentation, transfer learning, and regularization can significantly enhance model performance."
-  },
-  {
-    "objectID": "posts/how-do-i-know-i-have-enough-data/index.html#techniques-to-maximise-our-data-under-constraint-without-enough-data-for-instance",
-    "href": "posts/how-do-i-know-i-have-enough-data/index.html#techniques-to-maximise-our-data-under-constraint-without-enough-data-for-instance",
-    "title": "How Do I Know If I Have Enough Data?",
-    "section": "Techniques to maximise our data under constraint (without enough data for instance):",
-    "text": "Techniques to maximise our data under constraint (without enough data for instance):\nThe great thing about deep learning is that there are numerous techniques to maximise our data, ensuring we can build effective models even with limited datasets (yay!) - Techniques such as data augmentation, transfer learning, and regularization can significantly enhance model performance.\nStay tuned for a separate article that will delve into these techniques, providing strategies and tips on how to make the most of our available data and improve model performance even with constraints.\n\nKey takeaway: By training our model early and often, we can gain valuable insights into our data’s sufficiency and learn how to make informed decisions about data collection and preprocessing. This approach not only helps build better models but also makes our development process more agile and responsive.\nStay curious! Manon"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome and Why A Blog?",
+    "objectID": "posts/build-http-server-from-scratch/index.html#contents",
+    "href": "posts/build-http-server-from-scratch/index.html#contents",
+    "title": "Building a HTTP Server from Scratch",
     "section": "",
-    "text": "I hear a lot that blogs are dead.\nMaybe.\nBut I love blogs! So I decided to start one anyways to document my learning journey with deep learning and AI.\nI am learning the fundamentals, and on day two of the fastai course from Jeremy Howard I was able to train my first model to classify bears.\nHOW COOL IS THAT???\nStay curious, Manon"
+    "text": "Why Build a HTTP server from Scratch?\nFirst, the basics. What Is an HTTP Server?\n\nTCP vs. UDP\n\nKey features of my HTTP Server (Typescript + Nodejs)\nWhat I Learned\n\nLearning 1: Sockets!\nLearning 2: Routing Isn’t That Simple\nLearning 3: Always Try to Break Your Software\n\nWhat’s Next?\nWhy It Matters - Meta Learnings"
+  },
+  {
+    "objectID": "posts/build-http-server-from-scratch/index.html#why-build-a-http-server-from-scratch",
+    "href": "posts/build-http-server-from-scratch/index.html#why-build-a-http-server-from-scratch",
+    "title": "Building a HTTP Server from Scratch",
+    "section": "Why Build a HTTP server from Scratch?",
+    "text": "Why Build a HTTP server from Scratch?\nThese days, you can spin up a fully functional server in minutes with the help of modern tools.\nSo why would anyone bother building an HTTP server from scratch using Nodejs and Typescript?\nFor me, it’s an experiment I am running for the next three months: mastering building blocks fundamentals and re training myself on doing deep work.\nThere is also a simple truth about working in tech: if I am serious about thriving as a full-stack engineer, I surely need to own the basics, and not just know how to work with abstractions and frameworks that do pretty much everything for you.\nBeyond the technical challenge, there’s the simple satisfaction of building something fun and tangible. There’s unparalleled satisfaction in crafting a tool that serves a real purpose, like delivering a web page that serves an HTML page with images and text, using only the basics.\nIt’s a powerful way to deepen your technical skills in a meaningful way while working on something enjoyable."
+  },
+  {
+    "objectID": "posts/build-http-server-from-scratch/index.html#first-the-basics.-what-is-an-http-server",
+    "href": "posts/build-http-server-from-scratch/index.html#first-the-basics.-what-is-an-http-server",
+    "title": "Building a HTTP Server from Scratch",
+    "section": "First, the basics. What Is an HTTP Server?",
+    "text": "First, the basics. What Is an HTTP Server?\nAt its core, an HTTP server is a program that listens for incoming HTTP requests from clients (like a browser or API consumer), processes those requests, and sends back responses. It uses the TCP (Transmission Control Protocol) to establish a reliable connection, ensuring that data packets arrive in order and intact.\n\nTCP vs. UDP\nI do mountaineering and one analogy came to me to differentiate TCP and UDP protocols.\n\nTCP: Think of climbers on a glacier roped together. Everyone reaches the summit securely and in order. That’s TCP: ensuring that data (climbers) arrive in order and intact.\nUDP: UDP are like alpinists climbing individually without ropes. It’s usually faster, but there’s no guarantee everyone gets there. Fast, but less reliable."
+  },
+  {
+    "objectID": "posts/build-http-server-from-scratch/index.html#key-features-of-my-http-server-typescript-nodejs",
+    "href": "posts/build-http-server-from-scratch/index.html#key-features-of-my-http-server-typescript-nodejs",
+    "title": "Building a HTTP Server from Scratch",
+    "section": "Key features of my HTTP Server (Typescript + Nodejs)",
+    "text": "Key features of my HTTP Server (Typescript + Nodejs)\n\nHandles GET and POST Requests: Responds with a simple “Hello, World!” for basic requests.\nSupports for HTTP/1.1 Protocol: Implements the essentials of this widely-used protocol.\nServes Static Files: Fetches and delivers image files stored in the server’s public/images/ directory.\nRouting: Implements basic routing using if-else statements to handle different endpoints like /api or /.\nError Handling: Ensures proper responses for malformed requests, like returning 400 Bad Request for parsing errors."
+  },
+  {
+    "objectID": "posts/build-http-server-from-scratch/index.html#what-i-learned",
+    "href": "posts/build-http-server-from-scratch/index.html#what-i-learned",
+    "title": "Building a HTTP Server from Scratch",
+    "section": "What I Learned",
+    "text": "What I Learned\n\nLearning 1: Sockets!\nSockets are how servers and clients talk to each other. Before this project, I knew about sockets the way most of us know about cars: we press the gas pedal, and the car moves. Magic! Now, I’ve seen how there is nothing magical about it, especially when I wrote the createDataHandler function:\nconst createDataHandler = (\n  socket: net.Socket,\n  handleRequest: (rawRequest: string) =&gt; {\n    statusCode: number;\n    statusMessage: string;\n    headers: Record&lt;string, string&gt;;\n    body: string | Buffer;\n  },\n): ((chunk: Buffer) =&gt; void) =&gt; {\n  let buffer = '';\n  \n  return (chunk: Buffer) =&gt; {\n    buffer += chunk.toString();\n    if (buffer.includes('\\r\\n\\r\\n')) {\n      const response = handleRequest(buffer);\n      if (socket.writable) {\n        socket.write(formatHttpResponse(response));\n        socket.end();\n      } else {\n        logger.error('Socket is not writable, skipping response');\n      }\n    }\n  };\n};\n\nExplanation of createDataHandler Function\ncreateDataHandler is a function that handles incoming TCP data chunks for HTTP requests. It maintains a buffer—a string that accumulates data from incoming chunks.\n\nChunk Conversion: For each chunk, it converts the binary data into a string and appends it to the buffer.\nHeader Detection: It then checks if the buffer contains \\r\\n\\r\\n, which marks the end of the HTTP headers.\nProcessing & Response: If it finds the marker, it processes the request and sends a response.\n\nThis gave me a clearer view of how HTTP works at the lowest level: every incoming request starts as raw data, and the server has to parse it into something usable. Sockets are the invisible ropes that pull these chunks back and forth, and the createDataHandler function is the intermediary which makes something sensible of the data.\nWe can also appreciate how fragile things are: if the buffer isn’t handled properly—by failing to detect the end of the headers, for example—the server breaks. These are things I’ve never appreciated when using frameworks.\n\n\n\nLearning 2: Routing Isn’t That Simple\nManual routing turned out to be more challenging than I expected, especially when it came to handling content types. Frameworks like Express.js make this super easy, but behind the scenes, there’s a lot happening:\n\nContent-Type Handling: My server only supported JSON for request bodies, and I had to set the correct MIME type manually for responses. Adding support for more content types, like multipart/form-data for file uploads or application/x-www-form-urlencoded for form submissions, would require additional parsing logic.\nHeaders Management: In a basic setup, you’re responsible for setting essential headers like Content-Type and Content-Length. Get these values wrong, and the client either won’t understand the response or will hang waiting for more data. This is what happened when my server was not picking up the images/jpeg datatype.\nParsing Body Formats: Each content type requires its own logic. For example, JSON bodies need to be parsed into JavaScript objects, while multipart/form-data requires handling file streams. This complexity grows quickly as you add support for more formats.\n\nExpress.js automates most of this. It detects the Content-Type header, parses the body accordingly, and sets the right MIME type for responses. Doing this manually gave me a deep appreciation for how much work frameworks save.\nWhile my manual routing works for basic cases, it’s clear that scaling it to handle more complex scenarios would require more effort.\n\n\nLearning 3: Always Try to Break Your Software\nSoftware is rarely perfect the first time around. A great way to test my server was to run:\nhey -n 1000 -m GET http://localhost:8080/\n\n\nStress Test Outcome\nBOOM. The server crashed after 800 requests.\nWhy?\nThis command sends 1,000 simultaneous GET requests, simulating real-world stress. It exposed a critical issue: I wasn’t handling socket timeouts properly. My server would hang because it didn’t close idle sockets.\nThe Fix:\nTo fix this, I chose to close the socket after each request, which works great for the scope of this project. But if I wanted to support persistent connections, I’d need to avoid calling socket.end() and implement additional logic. For now, closing the connection after each request is the simplest and safest approach. It’s clean, predictable, and prevents resource leaks."
+  },
+  {
+    "objectID": "posts/build-http-server-from-scratch/index.html#whats-next",
+    "href": "posts/build-http-server-from-scratch/index.html#whats-next",
+    "title": "Building a HTTP Server from Scratch",
+    "section": "What’s Next?",
+    "text": "What’s Next?\nThere’s a lot more I can add to this server, which is also the reason why I love to start a project from ZERO. I get to own every bite of it and can add on to it as learning-needs/curiosity fit.\n\nHTTPS: Right now, it’s plain HTTP. Adding SSL/TLS would make it secure.\nWebSockets: For real-time communication, like chat apps.\nAuthentication: Handle user logins and sessions.\nBetter Routing: Add support for more content types and dynamically set MIME types based on file extensions or request content.\nCaching: Improve performance by storing frequently requested data."
+  },
+  {
+    "objectID": "posts/build-http-server-from-scratch/index.html#why-it-matters---meta-learnings",
+    "href": "posts/build-http-server-from-scratch/index.html#why-it-matters---meta-learnings",
+    "title": "Building a HTTP Server from Scratch",
+    "section": "Why It Matters - Meta Learnings",
+    "text": "Why It Matters - Meta Learnings\nI am a huge fan of Tim Ferriss, especially when it comes to his lessons on meta learning, or the ability to learn pretty much everything and become a top performer in any field in a short period of time.\nWriting an HTTP server from scratch was a way to dig deeper into one of the fundamental building blocks of full-stack engineering—to deeply understand the web and servers. It was also interesting to see how constraints (not using a framework like Express) force you to think critically and solve problems creatively, which of course deepens my understanding. Last but not least, there’s simply a unique joy in building something functional from scratch! 😃\nYou can check the project on GitHub!\nHappy building!"
+  },
+  {
+    "objectID": "posts/build-first-model/index.html",
+    "href": "posts/build-first-model/index.html",
+    "title": "Build your first Deep Learning app",
+    "section": "",
+    "text": "I made my first ML-powered app in day two of the “Deep Learning Course for Coders” from Jeremy Howard of fastai, my new hero haha.\nTo give you some context, I am fullstack developer with no prior experience in data science and deep learning. I am just interested in learning how deep learning can solve tangible problems, and how teams and people can make ethical decisions based on data.\nToday I am giving back to the community, so we are going to make an image classification model that classifies bears, using fastai, HuggingFace Spaces and Gradio. It’s so inspiring for me to see that in a few lines of code I was able to have something sharable! (You can see it here!)"
+  },
+  {
+    "objectID": "posts/build-first-model/index.html#improving-the-model",
+    "href": "posts/build-first-model/index.html#improving-the-model",
+    "title": "Build your first Deep Learning app",
+    "section": "Improving the model",
+    "text": "Improving the model"
+  },
+  {
+    "objectID": "posts/build-first-model/index.html#downloading-the-model",
+    "href": "posts/build-first-model/index.html#downloading-the-model",
+    "title": "Build your first Deep Learning app",
+    "section": "Downloading the model",
+    "text": "Downloading the model"
+  },
+  {
+    "objectID": "posts/build-first-model/index.html#gradio-template",
+    "href": "posts/build-first-model/index.html#gradio-template",
+    "title": "Build your first Deep Learning app",
+    "section": "Gradio template",
+    "text": "Gradio template"
   },
   {
     "objectID": "posts/fit-function-into-data/index.html",
@@ -91,38 +133,52 @@
     "text": "Conclusion\nFitting a function to data in neural networks is about learning the optimal parameter values that allow the model to capture underlying patterns and make accurate predictions. This process is central to machine learning, enabling models to generalize from examples and solve real-world problems effectively."
   },
   {
-    "objectID": "posts/build-first-model/index.html",
-    "href": "posts/build-first-model/index.html",
-    "title": "Build your first Deep Learning app",
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome and Why A Blog?",
     "section": "",
-    "text": "I made my first ML-powered app in day two of the “Deep Learning Course for Coders” from Jeremy Howard of fastai, my new hero haha.\nTo give you some context, I am fullstack developer with no prior experience in data science and deep learning. I am just interested in learning how deep learning can solve tangible problems, and how teams and people can make ethical decisions based on data.\nToday I am giving back to the community, so we are going to make an image classification model that classifies bears, using fastai, HuggingFace Spaces and Gradio. It’s so inspiring for me to see that in a few lines of code I was able to have something sharable! (You can see it here!)"
+    "text": "I hear a lot that blogs are dead.\nMaybe.\nBut I love blogs! So I decided to start one anyways to document my learning journey with deep learning and AI.\nI am learning the fundamentals, and on day two of the fastai course from Jeremy Howard I was able to train my first model to classify bears.\nHOW COOL IS THAT???\nStay curious, Manon"
   },
   {
-    "objectID": "posts/build-first-model/index.html#improving-the-model",
-    "href": "posts/build-first-model/index.html#improving-the-model",
-    "title": "Build your first Deep Learning app",
-    "section": "Improving the model",
-    "text": "Improving the model"
+    "objectID": "posts/how-do-i-know-i-have-enough-data/index.html",
+    "href": "posts/how-do-i-know-i-have-enough-data/index.html",
+    "title": "How Do I Know If I Have Enough Data?",
+    "section": "",
+    "text": "In the world of deep learning, a common question that arises is, “How do I know if I have enough data?” This is a crucial consideration because the quantity and quality of your data can significantly impact the performance of your model. However, knowing whether your dataset is sufficient isn’t always straightforward and requires a combination of practice and experimentation."
   },
   {
-    "objectID": "posts/build-first-model/index.html#downloading-the-model",
-    "href": "posts/build-first-model/index.html#downloading-the-model",
-    "title": "Build your first Deep Learning app",
-    "section": "Downloading the model",
-    "text": "Downloading the model"
+    "objectID": "posts/how-do-i-know-i-have-enough-data/index.html#key-questions-to-ask",
+    "href": "posts/how-do-i-know-i-have-enough-data/index.html#key-questions-to-ask",
+    "title": "How Do I Know If I Have Enough Data?",
+    "section": "Key Questions to Ask:",
+    "text": "Key Questions to Ask:\n\nIs the model overfitting or underfitting? Overfitting might indicate that the model is too complex for the available data. Underfitting suggests the model may be too simple or not trained enough.\nHow does the model perform on validation or test data? Consistent performance across training and validation sets can indicate sufficient data."
   },
   {
-    "objectID": "posts/build-first-model/index.html#gradio-template",
-    "href": "posts/build-first-model/index.html#gradio-template",
-    "title": "Build your first Deep Learning app",
-    "section": "Gradio template",
-    "text": "Gradio template"
+    "objectID": "posts/how-do-i-know-i-have-enough-data/index.html#you-cant-know-if-you-have-enough-until-you-train-the-model",
+    "href": "posts/how-do-i-know-i-have-enough-data/index.html#you-cant-know-if-you-have-enough-until-you-train-the-model",
+    "title": "How Do I Know If I Have Enough Data?",
+    "section": "You Can’t Know If You Have Enough Until You Train the Model",
+    "text": "You Can’t Know If You Have Enough Until You Train the Model\nThe truth is, you can’t really know if you have enough data until you actually train the model. The process of training helps reveal whether your dataset is capturing the necessary features and patterns to achieve your desired level of performance. You may find that even a small dataset works well with certain problems, especially with the right techniques, like transfer learning or data augmentation."
+  },
+  {
+    "objectID": "posts/how-do-i-know-i-have-enough-data/index.html#advantages-of-training-early",
+    "href": "posts/how-do-i-know-i-have-enough-data/index.html#advantages-of-training-early",
+    "title": "How Do I Know If I Have Enough Data?",
+    "section": "Advantages of Training Early:",
+    "text": "Advantages of Training Early:\n\nExperimentation: Training early enables experimentation with different models and hyperparameters, helping us to learn what works best for our specific problem.\nUnderstanding Data Needs: Initial training results can inform whether more data is required or if our efforts should focus on optimizing other aspects of the model.\nAvoiding Wasted Effort: We might find that a simple model trained on limited data achieves acceptable results, saving time and resources!\n\nThat being said, the great thing is that there are techniques available to maximise our data, ensuring we can build effective models even with limited datasets (yay!) - Techniques such as data augmentation, transfer learning, and regularization can significantly enhance model performance."
+  },
+  {
+    "objectID": "posts/how-do-i-know-i-have-enough-data/index.html#techniques-to-maximise-our-data-under-constraint-without-enough-data-for-instance",
+    "href": "posts/how-do-i-know-i-have-enough-data/index.html#techniques-to-maximise-our-data-under-constraint-without-enough-data-for-instance",
+    "title": "How Do I Know If I Have Enough Data?",
+    "section": "Techniques to maximise our data under constraint (without enough data for instance):",
+    "text": "Techniques to maximise our data under constraint (without enough data for instance):\nThe great thing about deep learning is that there are numerous techniques to maximise our data, ensuring we can build effective models even with limited datasets (yay!) - Techniques such as data augmentation, transfer learning, and regularization can significantly enhance model performance.\nStay tuned for a separate article that will delve into these techniques, providing strategies and tips on how to make the most of our available data and improve model performance even with constraints.\n\nKey takeaway: By training our model early and often, we can gain valuable insights into our data’s sufficiency and learn how to make informed decisions about data collection and preprocessing. This approach not only helps build better models but also makes our development process more agile and responsive.\nStay curious! Manon"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "‘True intelligence requires empathy, both in humans and machines.’ - Cynthia Rudin",
     "section": "",
-    "text": "How Do I Know If I Have Enough Data?\n\n\n\n\n\n\ntip\n\n\ndeep learning\n\n\ndata processing\n\n\n\n\n\n\n\n\n\nAug 10, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is a neural net?\n\n\n\n\n\n\nbeginner\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\nAug 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nBuild your first Deep Learning app\n\n\n\n\n\n\ntutorial\n\n\nbeginner\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\nJul 10, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nFitting a Function to Data in Neural Networks\n\n\n\n\n\n\nbeginner\n\n\nfundamentals\n\n\n\n\n\n\n\n\n\nJul 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome and Why A Blog?\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\nNo matching items"
+    "text": "Building a HTTP Server from Scratch\n\n\n\n\n\n\nHTTP\n\n\nfundamentals\n\n\ntypescript\n\n\nnodejs\n\n\n\n\n\n\n\n\n\nJan 18, 2025\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nHow Do I Know If I Have Enough Data?\n\n\n\n\n\n\ntip\n\n\ndeep learning\n\n\ndata processing\n\n\n\n\n\n\n\n\n\nAug 10, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is a neural net?\n\n\n\n\n\n\nbeginner\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\nAug 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nBuild your first Deep Learning app\n\n\n\n\n\n\ntutorial\n\n\nbeginner\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\nJul 10, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nFitting a Function to Data in Neural Networks\n\n\n\n\n\n\nbeginner\n\n\nfundamentals\n\n\n\n\n\n\n\n\n\nJul 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome and Why A Blog?\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 7, 2024\n\n\nManon Jacquin\n\n\n\n\n\n\nNo matching items"
   }
 ]

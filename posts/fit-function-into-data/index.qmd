@@ -2,7 +2,8 @@
 title: "Fitting a Function to Data in Neural Networks"
 author: "Manon Jacquin"
 date: "2024-07-07"
-categories: [news]
+categories: [beginner, fundamentals]
+image: "function.jpg"
 ---
 
 

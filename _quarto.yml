@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "Maja Tech"
+  title: "Manon Jacquin"
   navbar:
     right:
       - about.qmd

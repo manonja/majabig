@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Manon Jacquin">
-<meta name="dcterms.date" content="2024-07-07">
+<meta name="dcterms.date" content="2025-01-18">
 
-<title>Welcome and Why A Blog? – Manon Jacquin</title>
+<title>Building a HTTP Server from Scratch – Manon Jacquin</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -115,9 +149,12 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome and Why A Blog?</h1>
+      <h1 class="title">Building a HTTP Server from Scratch</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                <div class="quarto-category">HTTP</div>
+                <div class="quarto-category">fundamentals</div>
+                <div class="quarto-category">typescript</div>
+                <div class="quarto-category">nodejs</div>
               </div>
                   </div>
   </div>
@@ -135,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 7, 2024</p>
+        <p class="date">January 18, 2025</p>
       </div>
     </div>
     
@@ -154,14 +191,146 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>I hear a lot that blogs are dead.</p>
-<p>Maybe.</p>
-<p>But I love blogs! So I decided to start one anyways to document my learning journey with deep learning and AI.</p>
-<p>I am learning the fundamentals, and on day two of the fastai course from Jeremy Howard I was able to train my first model to classify bears.</p>
-<p>HOW COOL IS THAT???</p>
-<p>Stay curious, Manon</p>
+<section id="contents" class="level2">
+<h2 class="anchored" data-anchor-id="contents">Contents</h2>
+<ul>
+<li><a href="##why-build-a-http-server-from-scratch">Why Build a HTTP server from Scratch?</a></li>
+<li><a href="#first-the-basics-what-is-an-http-server">First, the basics. What Is an HTTP Server?</a>
+<ul>
+<li><a href="#tcp-vs-udp">TCP vs.&nbsp;UDP</a></li>
+</ul></li>
+<li><a href="#key-features-of-my-http-server-typescript--nodejs">Key features of my HTTP Server (Typescript + Nodejs)</a></li>
+<li><a href="##what-i-learned">What I Learned</a>
+<ul>
+<li><a href="#learning-1-sockets">Learning 1: Sockets!</a></li>
+<li><a href="#learning-2-routing-isnt-that-simple">Learning 2: Routing Isn’t That Simple</a></li>
+<li><a href="#learning-3-always-try-to-break-your-software">Learning 3: Always Try to Break Your Software</a></li>
+</ul></li>
+<li><a href="##whats-next">What’s Next?</a></li>
+<li><a href="##why-it-matters---meta-learnings">Why It Matters - Meta Learnings</a></li>
+</ul>
+</section>
+<section id="why-build-a-http-server-from-scratch" class="level2">
+<h2 class="anchored" data-anchor-id="why-build-a-http-server-from-scratch">Why Build a HTTP server from Scratch?</h2>
+<p>These days, you can spin up a fully functional server in minutes with the help of modern tools.</p>
+<p><strong>So why would anyone bother building an HTTP server from scratch using Nodejs and Typescript?</strong></p>
+<p>For me, it’s an experiment I am running for the next three months: mastering building blocks fundamentals and re training myself on doing deep work.</p>
+<p>There is also a simple truth about working in tech: if I am serious about thriving as a full-stack engineer, I surely need to own the basics, and not just know how to work with abstractions and frameworks that do pretty much everything for you.</p>
+<p>Beyond the technical challenge, there’s the simple satisfaction of building something fun and tangible. There’s unparalleled satisfaction in crafting a tool that serves a real purpose, like delivering a web page that serves an HTML page with images and text, using only the basics.</p>
+<p>It’s a powerful way to deepen your technical skills in a meaningful way while working on something enjoyable.</p>
+<hr>
+</section>
+<section id="first-the-basics.-what-is-an-http-server" class="level2">
+<h2 class="anchored" data-anchor-id="first-the-basics.-what-is-an-http-server"><strong>First, the basics. What Is an HTTP Server?</strong></h2>
+<p>At its core, an HTTP server is a program that listens for incoming HTTP requests from clients (like a browser or API consumer), processes those requests, and sends back responses. It uses the <strong>TCP (Transmission Control Protocol)</strong> to establish a reliable connection, ensuring that data packets arrive in order and intact.</p>
+<section id="tcp-vs.-udp" class="level3">
+<h3 class="anchored" data-anchor-id="tcp-vs.-udp"><strong>TCP vs.&nbsp;UDP</strong></h3>
+<p>I do mountaineering and one analogy came to me to differentiate TCP and UDP protocols.</p>
+<ul>
+<li><strong>TCP:</strong> Think of climbers on a glacier roped together. Everyone reaches the summit securely and in order. That’s TCP: ensuring that data (climbers) arrive in order and intact.</li>
+<li><strong>UDP:</strong> UDP are like alpinists climbing individually without ropes. It’s usually faster, but there’s no guarantee everyone gets there. Fast, but less reliable.</li>
+</ul>
+</section>
+</section>
+<section id="key-features-of-my-http-server-typescript-nodejs" class="level2">
+<h2 class="anchored" data-anchor-id="key-features-of-my-http-server-typescript-nodejs"><strong>Key features of my HTTP Server (Typescript + Nodejs)</strong></h2>
+<ol type="1">
+<li><strong>Handles GET and POST Requests:</strong> Responds with a simple “Hello, World!” for basic requests.</li>
+<li><strong>Supports for HTTP/1.1 Protocol:</strong> Implements the essentials of this widely-used protocol.</li>
+<li><strong>Serves Static Files:</strong> Fetches and delivers image files stored in the server’s <code>public/images/</code> directory.</li>
+<li><strong>Routing:</strong> Implements basic routing using <code>if-else</code> statements to handle different endpoints like <code>/api</code> or <code>/</code>.</li>
+<li><strong>Error Handling:</strong> Ensures proper responses for malformed requests, like returning <code>400 Bad Request</code> for parsing errors.</li>
+</ol>
+<hr>
+</section>
+<section id="what-i-learned" class="level2">
+<h2 class="anchored" data-anchor-id="what-i-learned">What I Learned</h2>
+<section id="learning-1-sockets" class="level3">
+<h3 class="anchored" data-anchor-id="learning-1-sockets">Learning 1: Sockets!</h3>
+<p>Sockets are how servers and clients talk to each other. Before this project, I knew about sockets the way most of us know about cars: we press the gas pedal, and the car moves. Magic! Now, I’ve seen how there is nothing magical about it, especially when I wrote the <code>createDataHandler</code> function:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode typescript code-with-copy"><code class="sourceCode typescript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> createDataHandler <span class="op">=</span> (</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  socket<span class="op">:</span> net<span class="op">.</span><span class="at">Socket</span><span class="op">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  handleRequest<span class="op">:</span> (rawRequest<span class="op">:</span> <span class="dt">string</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    statusCode<span class="op">:</span> <span class="dt">number</span><span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    statusMessage<span class="op">:</span> <span class="dt">string</span><span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    headers<span class="op">:</span> <span class="bu">Record</span><span class="op">&lt;</span><span class="dt">string</span><span class="op">,</span> <span class="dt">string</span><span class="op">&gt;;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    body<span class="op">:</span> <span class="dt">string</span> <span class="op">|</span> <span class="bu">Buffer</span><span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)<span class="op">:</span> ((chunk<span class="op">:</span> <span class="bu">Buffer</span>) <span class="kw">=&gt;</span> <span class="dt">void</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> buffer <span class="op">=</span> <span class="st">''</span><span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (chunk<span class="op">:</span> <span class="bu">Buffer</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    buffer <span class="op">+=</span> chunk<span class="op">.</span><span class="fu">toString</span>()<span class="op">;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (buffer<span class="op">.</span><span class="fu">includes</span>(<span class="st">'</span><span class="sc">\r\n\r\n</span><span class="st">'</span>)) {</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> response <span class="op">=</span> <span class="fu">handleRequest</span>(buffer)<span class="op">;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (socket<span class="op">.</span><span class="at">writable</span>) {</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        socket<span class="op">.</span><span class="fu">write</span>(<span class="fu">formatHttpResponse</span>(response))<span class="op">;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        socket<span class="op">.</span><span class="fu">end</span>()<span class="op">;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        logger<span class="op">.</span><span class="fu">error</span>(<span class="st">'Socket is not writable, skipping response'</span>)<span class="op">;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="explanation-of-createdatahandler-function" class="level4">
+<h4 class="anchored" data-anchor-id="explanation-of-createdatahandler-function">Explanation of <code>createDataHandler</code> Function</h4>
+<p><code>createDataHandler</code> is a function that handles incoming TCP data chunks for HTTP requests. It maintains a <strong>buffer</strong>—a string that accumulates data from incoming chunks.</p>
+<ul>
+<li><strong>Chunk Conversion:</strong> For each chunk, it converts the binary data into a string and appends it to the buffer.</li>
+<li><strong>Header Detection:</strong> It then checks if the buffer contains <code>\r\n\r\n</code>, which marks the end of the HTTP headers.</li>
+<li><strong>Processing &amp; Response:</strong> If it finds the marker, it processes the request and sends a response.</li>
+</ul>
+<p>This gave me a clearer view of how HTTP works at the lowest level: every incoming request starts as raw data, and the server has to parse it into something usable. Sockets are the invisible ropes that pull these chunks back and forth, and the <code>createDataHandler</code> function is the intermediary which makes something sensible of the data.</p>
+<p>We can also appreciate how fragile things are: if the buffer isn’t handled properly—by failing to detect the end of the headers, for example—the server breaks. These are things I’ve never appreciated when using frameworks.</p>
+</section>
+</section>
+<section id="learning-2-routing-isnt-that-simple" class="level3">
+<h3 class="anchored" data-anchor-id="learning-2-routing-isnt-that-simple">Learning 2: Routing Isn’t That Simple</h3>
+<p>Manual routing turned out to be more challenging than I expected, especially when it came to handling content types. Frameworks like Express.js make this super easy, but behind the scenes, there’s a lot happening:</p>
+<ul>
+<li><strong>Content-Type Handling:</strong> My server only supported JSON for request bodies, and I had to set the correct MIME type manually for responses. Adding support for more content types, like <code>multipart/form-data</code> for file uploads or <code>application/x-www-form-urlencoded</code> for form submissions, would require additional parsing logic.</li>
+<li><strong>Headers Management:</strong> In a basic setup, you’re responsible for setting essential headers like <code>Content-Type</code> and <code>Content-Length</code>. Get these values wrong, and the client either won’t understand the response or will hang waiting for more data. This is what happened when my server was not picking up the <code>images/jpeg</code> datatype.</li>
+<li><strong>Parsing Body Formats:</strong> Each content type requires its own logic. For example, JSON bodies need to be parsed into JavaScript objects, while <code>multipart/form-data</code> requires handling file streams. This complexity grows quickly as you add support for more formats.</li>
+</ul>
+<p>Express.js automates most of this. It detects the <code>Content-Type</code> header, parses the body accordingly, and sets the right MIME type for responses. Doing this manually gave me a deep appreciation for how much work frameworks save.</p>
+<p>While my manual routing works for basic cases, it’s clear that scaling it to handle more complex scenarios would require more effort.</p>
+</section>
+<section id="learning-3-always-try-to-break-your-software" class="level3">
+<h3 class="anchored" data-anchor-id="learning-3-always-try-to-break-your-software">Learning 3: Always Try to Break Your Software</h3>
+<p>Software is rarely perfect the first time around. A great way to test my server was to run:</p>
+<p><code>hey -n 1000 -m GET http://localhost:8080/</code></p>
+</section>
+<section id="stress-test-outcome" class="level3">
+<h3 class="anchored" data-anchor-id="stress-test-outcome">Stress Test Outcome</h3>
+<p><strong>BOOM.</strong> The server crashed after 800 requests.</p>
+<p><strong>Why?</strong><br>
+This command sends 1,000 simultaneous GET requests, simulating real-world stress. It exposed a critical issue: I wasn’t handling socket timeouts properly. My server would hang because it didn’t close idle sockets.</p>
+<p><strong>The Fix:</strong><br>
+To fix this, I chose to close the socket after each request, which works great for the scope of this project. But if I wanted to support persistent connections, I’d need to avoid calling <code>socket.end()</code> and implement additional logic. For now, closing the connection after each request is the simplest and safest approach. It’s clean, predictable, and prevents resource leaks.</p>
+<hr>
+</section>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s Next?</h2>
+<p>There’s a lot more I can add to this server, which is also the reason why I love to start a project from <strong>ZERO</strong>. I get to own every bite of it and can add on to it as learning-needs/curiosity fit.</p>
+<ul>
+<li><strong>HTTPS:</strong> Right now, it’s plain HTTP. Adding SSL/TLS would make it secure.</li>
+<li><strong>WebSockets:</strong> For real-time communication, like chat apps.</li>
+<li><strong>Authentication:</strong> Handle user logins and sessions.</li>
+<li><strong>Better Routing:</strong> Add support for more content types and dynamically set MIME types based on file extensions or request content.</li>
+<li><strong>Caching:</strong> Improve performance by storing frequently requested data.</li>
+</ul>
+<hr>
+</section>
+<section id="why-it-matters---meta-learnings" class="level2">
+<h2 class="anchored" data-anchor-id="why-it-matters---meta-learnings">Why It Matters - Meta Learnings</h2>
+<p>I am a huge fan of Tim Ferriss, especially when it comes to his lessons on <strong>meta learning</strong>, or the ability to learn pretty much everything and become a top performer in any field in a short period of time.</p>
+<p>Writing an HTTP server from scratch was a way to dig deeper into one of the fundamental building blocks of full-stack engineering—to deeply understand the web and servers. It was also interesting to see how constraints (not using a framework like Express) force you to think critically and solve problems creatively, which of course deepens my understanding. Last but not least, there’s simply a unique joy in building something functional from scratch! 😃</p>
+<p>You can check the project on <a href="https://github.com/manonja/node-http-server-from-scratch">GitHub</a>!</p>
+<p>Happy building!</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

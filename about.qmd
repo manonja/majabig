@@ -16,4 +16,4 @@ about:
 
 ---
 
-A blog about deep learning, AI, tech and data ethics. 
+A blog about tech fundamentals, deep learning, AI, and ethics. 

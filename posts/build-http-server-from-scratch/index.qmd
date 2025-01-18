@@ -1,0 +1,153 @@
+---
+title: "Building a HTTP Server from Scratch"
+author: "Manon Jacquin"
+date: "2025-01-18"
+categories: [HTTP, fundamentals, typescript, nodejs]
+image: "http-server.jpg"
+---
+
+
+## Contents
+- [Why Build a HTTP server from Scratch?](##why-build-a-http-server-from-scratch)
+- [First, the basics. What Is an HTTP Server?](#first-the-basics-what-is-an-http-server)
+  - [TCP vs. UDP](#tcp-vs-udp)
+- [Key features of my HTTP Server (Typescript + Nodejs)](#key-features-of-my-http-server-typescript--nodejs)
+- [What I Learned](##what-i-learned)
+  - [Learning 1: Sockets!](#learning-1-sockets)
+  - [Learning 2: Routing Isn’t That Simple](#learning-2-routing-isnt-that-simple)
+  - [Learning 3: Always Try to Break Your Software](#learning-3-always-try-to-break-your-software)
+- [What’s Next?](##whats-next)
+- [Why It Matters - Meta Learnings](##why-it-matters---meta-learnings)
+
+## Why Build a HTTP server from Scratch?
+
+These days, you can spin up a fully functional server in minutes with the help of modern tools.
+
+**So why would anyone bother building an HTTP server from scratch using Nodejs and Typescript?**
+
+For me, it's an experiment I am running for the next three months: mastering building blocks fundamentals and re training myself on doing deep work.
+
+There is also a simple truth about working in tech: if I am serious about thriving as a full-stack engineer, I surely need to own the basics, and not just know how to work with abstractions and frameworks that do pretty much everything for you.
+
+Beyond the technical challenge, there’s the simple satisfaction of building something fun and tangible. There’s unparalleled satisfaction in crafting a tool that serves a real purpose, like delivering a web page that serves an HTML page with images and text, using only the basics.
+
+It’s a powerful way to deepen your technical skills in a meaningful way while working on something enjoyable.
+
+---
+
+## **First, the basics. What Is an HTTP Server?**
+
+At its core, an HTTP server is a program that listens for incoming HTTP requests from clients (like a browser or API consumer), processes those requests, and sends back responses. It uses the **TCP (Transmission Control Protocol)** to establish a reliable connection, ensuring that data packets arrive in order and intact.
+
+### **TCP vs. UDP**
+I do mountaineering and one analogy came to me to differentiate TCP and UDP protocols.
+
+- **TCP:** Think of climbers on a glacier roped together. Everyone reaches the summit securely and in order. That’s TCP: ensuring that data (climbers) arrive in order and intact.
+- **UDP:** UDP are like alpinists climbing individually without ropes. It’s usually faster, but there’s no guarantee everyone gets there. Fast, but less reliable.
+
+## **Key features of my HTTP Server (Typescript + Nodejs)**
+
+1. **Handles GET and POST Requests:** Responds with a simple “Hello, World!” for basic requests.
+2. **Supports for HTTP/1.1 Protocol:** Implements the essentials of this widely-used protocol.
+3. **Serves Static Files:** Fetches and delivers image files stored in the server’s `public/images/` directory.
+4. **Routing:** Implements basic routing using `if-else` statements to handle different endpoints like `/api` or `/`.
+5. **Error Handling:** Ensures proper responses for malformed requests, like returning `400 Bad Request` for parsing errors.
+
+---
+
+## What I Learned
+
+### Learning 1: Sockets!
+
+Sockets are how servers and clients talk to each other. Before this project, I knew about sockets the way most of us know about cars: we press the gas pedal, and the car moves. Magic! Now, I’ve seen how there is nothing magical about it, especially when I wrote the `createDataHandler` function:
+
+```typescript
+const createDataHandler = (
+  socket: net.Socket,
+  handleRequest: (rawRequest: string) => {
+    statusCode: number;
+    statusMessage: string;
+    headers: Record<string, string>;
+    body: string | Buffer;
+  },
+): ((chunk: Buffer) => void) => {
+  let buffer = '';
+  
+  return (chunk: Buffer) => {
+    buffer += chunk.toString();
+    if (buffer.includes('\r\n\r\n')) {
+      const response = handleRequest(buffer);
+      if (socket.writable) {
+        socket.write(formatHttpResponse(response));
+        socket.end();
+      } else {
+        logger.error('Socket is not writable, skipping response');
+      }
+    }
+  };
+};
+```
+
+#### Explanation of `createDataHandler` Function
+
+`createDataHandler` is a function that handles incoming TCP data chunks for HTTP requests. It maintains a **buffer**—a string that accumulates data from incoming chunks.
+
+- **Chunk Conversion:** For each chunk, it converts the binary data into a string and appends it to the buffer.
+- **Header Detection:** It then checks if the buffer contains `\r\n\r\n`, which marks the end of the HTTP headers.
+- **Processing & Response:** If it finds the marker, it processes the request and sends a response.
+
+This gave me a clearer view of how HTTP works at the lowest level: every incoming request starts as raw data, and the server has to parse it into something usable. Sockets are the invisible ropes that pull these chunks back and forth, and the `createDataHandler` function is the intermediary which makes something sensible of the data.
+
+We can also appreciate how fragile things are: if the buffer isn’t handled properly—by failing to detect the end of the headers, for example—the server breaks. These are things I've never appreciated when using frameworks.
+
+### Learning 2: Routing Isn’t That Simple
+
+Manual routing turned out to be more challenging than I expected, especially when it came to handling content types. Frameworks like Express.js make this super easy, but behind the scenes, there’s a lot happening:
+
+- **Content-Type Handling:** My server only supported JSON for request bodies, and I had to set the correct MIME type manually for responses. Adding support for more content types, like `multipart/form-data` for file uploads or `application/x-www-form-urlencoded` for form submissions, would require additional parsing logic.
+- **Headers Management:** In a basic setup, you’re responsible for setting essential headers like `Content-Type` and `Content-Length`. Get these values wrong, and the client either won’t understand the response or will hang waiting for more data. This is what happened when my server was not picking up the `images/jpeg` datatype.
+- **Parsing Body Formats:** Each content type requires its own logic. For example, JSON bodies need to be parsed into JavaScript objects, while `multipart/form-data` requires handling file streams. This complexity grows quickly as you add support for more formats.
+
+Express.js automates most of this. It detects the `Content-Type` header, parses the body accordingly, and sets the right MIME type for responses. Doing this manually gave me a deep appreciation for how much work frameworks save.
+
+While my manual routing works for basic cases, it’s clear that scaling it to handle more complex scenarios would require more effort.
+
+### Learning 3: Always Try to Break Your Software
+
+Software is rarely perfect the first time around. A great way to test my server was to run:
+
+`hey -n 1000 -m GET http://localhost:8080/`
+
+### Stress Test Outcome
+
+**BOOM.** The server crashed after 800 requests.
+
+**Why?**  
+This command sends 1,000 simultaneous GET requests, simulating real-world stress. It exposed a critical issue: I wasn’t handling socket timeouts properly. My server would hang because it didn’t close idle sockets.
+
+**The Fix:**  
+To fix this, I chose to close the socket after each request, which works great for the scope of this project. But if I wanted to support persistent connections, I’d need to avoid calling `socket.end()` and implement additional logic. For now, closing the connection after each request is the simplest and safest approach. It’s clean, predictable, and prevents resource leaks.
+
+---
+
+## What’s Next?
+
+There’s a lot more I can add to this server, which is also the reason why I love to start a project from **ZERO**. I get to own every bite of it and can add on to it as learning-needs/curiosity fit.
+
+- **HTTPS:** Right now, it’s plain HTTP. Adding SSL/TLS would make it secure.
+- **WebSockets:** For real-time communication, like chat apps.
+- **Authentication:** Handle user logins and sessions.
+- **Better Routing:** Add support for more content types and dynamically set MIME types based on file extensions or request content.
+- **Caching:** Improve performance by storing frequently requested data.
+
+---
+
+## Why It Matters - Meta Learnings
+
+I am a huge fan of Tim Ferriss, especially when it comes to his lessons on **meta learning**, or the ability to learn pretty much everything and become a top performer in any field in a short period of time.
+
+Writing an HTTP server from scratch was a way to dig deeper into one of the fundamental building blocks of full-stack engineering—to deeply understand the web and servers. It was also interesting to see how constraints (not using a framework like Express) force you to think critically and solve problems creatively, which of course deepens my understanding. Last but not least, there’s simply a unique joy in building something functional from scratch! 😃
+
+You can check the project on [GitHub](https://github.com/manonja/node-http-server-from-scratch)!
+
+Happy building!

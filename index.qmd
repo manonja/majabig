@@ -1,5 +1,5 @@
 ---
-title: "majabig"
+title: "'True intelligence requires empathy, both in humans and machines.' - Cynthia Rudin"
 listing:
   contents: posts
   sort: "date desc"

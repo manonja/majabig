@@ -3,7 +3,7 @@ title: "Build your first Deep Learning app"
 author: "Manon Jacquin"
 date: "2024-07-10"
 categories: [tutorial, beginner, deep learning]
-image: "image.jpg"
+image: "bear-first-model.jpg"
 ---
 
 I made my first ML-powered app in day two of the "Deep Learning Course for Coders" from Jeremy Howard of fastai, my new hero haha. 

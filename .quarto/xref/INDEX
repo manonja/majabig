@@ -13,5 +13,17 @@
   },
   "posts/build-first-model/index.qmd": {
     "index.html": "719e7c44"
+  },
+  "posts/what-is-a-neural-net/index.qmd": {
+    "index.html": "629de900"
+  },
+  "posts/fit-function-into-data/index.qmd": {
+    "index.html": "e2798bcb"
+  },
+  "posts/how-do-i-know-i-have-enough-data/index.qmd": {
+    "index.html": "2bf84273"
+  },
+  "posts/build-http-server-from-scratch/index.qmd": {
+    "index.html": "aefe0a0e"
   }
 }

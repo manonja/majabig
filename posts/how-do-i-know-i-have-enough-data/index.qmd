@@ -47,7 +47,7 @@ Stay tuned for a separate article that will delve into these techniques, providi
 
 ----------------------------------------
 
-### Key takeaway: By training our model early and often, we can gain valuable insights into our data's sufficiency and learn how to make informed decisions about data collection and preprocessing. This approach not only helps build better models but also makes our development process more agile and responsive.
+Key takeaway: By training our model early and often, we can gain valuable insights into our data's sufficiency and learn how to make informed decisions about data collection and preprocessing. This approach not only helps build better models but also makes our development process more agile and responsive.
 
 Stay curious!
 Manon
