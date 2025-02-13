@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/BE-curriculum/index.html",
       "/posts/build-http-server-from-scratch/index.html",
       "/posts/how-do-i-know-i-have-enough-data/index.html",
       "/posts/what-is-a-neural-net/index.html",
